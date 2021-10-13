@@ -23,5 +23,5 @@ dl_list = []
 pl = haifu(torannpu,pl_list)
 dl = haifu(torannpu,dl_list)
 print(pl)
-ko = input("このうち捨てるカードを選択してください*右から(0,1,2,3,4)*カンマ区切りで入力 >")
-print(torannpu)
+ko = list(map(int,input("このうち捨てるカードを選択してください*右から(0,1,2,3,4)*カンマ区切りで入力、ない場合は５を入力 >").split(",")))
+print(ko)
