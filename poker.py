@@ -8,7 +8,6 @@ def toranpu_():
             torannpu.append(i+j)
     return torannpu
 def haifu(torannpu,fs_list,count=5):
-    fs_list = []
     for i in range(count):
         fs = random.choice(torannpu)
         fs_list.append(fs)
@@ -19,8 +18,15 @@ def haifu(torannpu,fs_list,count=5):
 torannpu = toranpu_()
 pl_list = []
 dl_list = []
-
 pl = haifu(torannpu,pl_list)
 dl = haifu(torannpu,dl_list)
 print(pl)
 ko = list(map(int,input("このうち捨てるカードを選択してください*右から(0,1,2,3,4)*カンマ区切りで入力、ない場合は５を入力 >").split(",")))
+if ko != [5]:
+    b = 0
+    for i in ko:    
+        k = pl[i - b]
+        pl.remove(k)
+        b +=1
+    count = 5 - len(pl)
+    pl_2 = haifu(torannpu,pl,count)
