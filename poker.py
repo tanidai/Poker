@@ -30,4 +30,5 @@ if ko != [5]:
     count = 5 - len(pl)
     pl_2 = haifu(torannpu,pl,count)
     print(pl_2)
-print(ko)
+elif ko == [5]:
+    print(pl)
