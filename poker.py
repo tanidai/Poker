@@ -32,12 +32,13 @@ print("プレイヤー")
 print(pl)
 print("ディーラー")
 print(dl)
-ko = list(map(int,input("このうち捨てるカードを選択してください*右から(0,1,2,3,4)*カンマ区切りで入力、ない場合は５を入力,全ての場合は６を入力 >").split(",")))
+ko = list(map(str,input("このうち捨てるカードを選択してください*右から(0,1,2,3,4)*カンマ区切りで入力、ない場合は５を入力,全ての場合は６を入力 >").split(",")))
 dl_rst = dlira(dl)
 ko = ko[::-1]
 print(ko)
 if ko != [5] and ko != [6]:
-    for i in ko:    
+    for i in ko:
+        i = int(i)    
         k = pl[i]
         pl.remove(k)
     count = 5 - len(pl)
