@@ -36,7 +36,16 @@ ko = list(map(str,input("このうち捨てるカードを選択してくださ�
 dl_rst = dlira(dl)
 ko = ko[::-1]
 print(ko)
-if ko != [5] and ko != [6]:
+
+if ko == ["5"]:
+    print("プレイヤー")
+    print(pl)
+elif ko == ["6"]:
+    pl = []
+    pl = haifu(torannpu,pl)
+    print("プレイヤー")
+    print(pl)
+elif ko != ["5"] and ko != ["6"]:
     for i in ko:
         i = int(i)    
         k = pl[i]
@@ -45,14 +54,6 @@ if ko != [5] and ko != [6]:
     pl_2 = haifu(torannpu,pl,count)
     print("プレイヤー")
     print(pl_2)
-elif ko == [5]:
-    print("プレイヤー")
-    print(pl)
-elif ko == [6]:
-    pl = []
-    pl = haifu(torannpu,pl)
-    print("プレイヤー")
-    print(pl)
 print("ディーラー")
 print(dl_rst)
 print("残りのトランプ")
